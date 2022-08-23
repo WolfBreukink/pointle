@@ -173,7 +173,8 @@ footer {
     position: absolute;
     left:0;
     right:0;
-    top:20vh;
+    top:50%;
+    transform:translateY(-50%);
     margin: 0px auto;
     min-width: 320px;
     max-width: 80vw;
@@ -186,6 +187,27 @@ footer {
     border: black 1px solid;
 
     font-size: clamp(1rem, calc(1rem + 1vw), 2rem);
+}
+
+.button {
+    width: fit-content;
+    background-color: #c0e5f5;
+    color: #336e80;
+    padding: 0.3rem 0.6rem;
+    margin: 0.1rem 0;
+    border: 3px solid #c0e5f5;
+    border-radius: 0.5rem;
+}
+
+.button:hover {
+    background-color: #336e80;
+    color: #c0e5f5;
+}
+
+.button:active {
+    background-color: white;
+    color: #336e80;
+    border: 3px solid #336e80;
 }
 
 .score {

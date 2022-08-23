@@ -37,7 +37,7 @@ if ((!localStorage.hasOwnProperty('prevSession'))) {
 let prevSession = localStorage.getItem('prevSession');
 let guessN = 0;
 let guessed = false;
-let shareText = `Pointle | Day ${diff} | ${TC.name}\nhttps://www.pointle.io\n\n`;
+let shareText = `Pointle | Day ${diff} | ${TC.name}\nhttps://www.pointle.eu\n\n`;
 
 if (playData.day == prevSession) {
     console.log('Continuing the game!');
@@ -251,6 +251,14 @@ function hide(elem) {
 }
 
 function show(elem) {
+    const overlays = document.getElementsByClassName('overlay');
+    console.log(overlays);
+    // hide all open overlays;
+    for(let i=0; i<overlays.length; i++) {
+        console.log(overlays[i]);
+        hide(overlays[i]);
+    }
+
     elem.style.display = 'block'
     console.log(`showed ${elem}`)
 }

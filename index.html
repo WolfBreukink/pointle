@@ -13,10 +13,10 @@
 
 <body>
     <header id="header">
-        <h1>POINTLE.io</h1>
+        <h1>POINTLE.eu</h1>
         <p class="nav" onclick="show(document.getElementById('helpmenu'))">❓</p>
         <p class="nav" onclick="calcScore(); show(document.getElementById('scoremenu'))">📈</p>
-        <p class="nav" onclick="localStorage.clear()">⚙️(clr cky)</p>
+        <p class="nav" onclick="show(document.getElementById('settings'))">⚙️</p>
     </header>
 
     <div class='overlay' id="gameover" onclick="hide(this)"><p id="gameoverClose"><em style="font-size: 1rem;">Click here to close</em></p></div>
@@ -44,6 +44,11 @@
             <dd class="percentage"><span class="graphtext">6 : </span><div id="percentage-6"></div></dd>
             <dd class="percentage"><span class="graphtext">❌: </span><div id="percentage-7"></div></dd>
         </dl>
+    </div>
+    <div class='overlay settings' id="settings">
+        <h3>Settings</h3>
+        <div class="button" id="clearcache" onclick="localStorage.clear()">Clear user data</div>
+        <div class="button" onclick="hide(this.parentElement)">Close</div>
     </div>
     <h2 id="todayscountry" class="gameinfo">-</h2>
     <div class="container" id="playfield">
