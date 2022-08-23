@@ -1,4 +1,4 @@
-# pointle
+# Pointle
 Daily Quiz: pinpoint the shown country (or area) on a world map without country borders!
 
 This webpage is a personal project of mine to get a feel for HTML, CSS, and JavaScript. 
