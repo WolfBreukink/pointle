@@ -23,12 +23,11 @@ footer {
     align-items: center;
     overflow: hidden;
     text-align: center;
-    
-    height: fit-content;
-    width: 100vw;
+    height: calc(2.5rem + 1vw);
+    min-height: 40px;
+    width: 100%;
     min-width: 320px;
-    padding: 0 10rem;
-    
+    padding: 0.6rem clamp(5%,5vw, 20%);    
     background-color: #ffffff;
     box-shadow: 0px 4px 2px #adcfdd;
 }
@@ -38,7 +37,7 @@ footer {
 }
 
 #header img {
-    height: 2.5rem;
+    height: calc(1.4rem + 1vw);
     width: fit-content;
 }
 
@@ -46,11 +45,11 @@ footer {
     width: fit-content;
     text-align: center;
     margin: 1rem auto 2rem auto;
-    font-size: calc(.5rem + 2vw);
     background-color: #ffffff;
     box-shadow: 4px 4px 2px #adcfdd ;
     border-radius: 1rem;
-    padding: .3rem clamp(.4rem, 3vw, 2.8rem);
+    padding: .3rem 1.7rem;
+    font-size: calc(1rem + 1vw);
 }
 
 #header .nav {
@@ -61,7 +60,6 @@ footer {
     font-size: calc(1rem + 1vw);
     padding: .6rem 0;
     text-decoration: none;
-
 }
 
 #header .nav:hover {
@@ -82,7 +80,7 @@ footer {
 
 .container > * {
     touch-action: none;
-    min-width: 400px;
+    min-width: 320px;
 }
 
 #svgobject {
@@ -123,25 +121,22 @@ footer {
     padding: 1rem .5rem;
     width: 30vw;
     justify-self: center;
-    font-size: calc(.4rem + 1vw);
+    font-size: calc(.3rem + .6vw);
     max-height: 100%;
-    min-width: 240px;
+    min-width: 180px;
 }
 
 .guess {
     display: grid;
     padding: 0;
-    grid-template-columns: 1fr 2fr;
-    height: 2rem;
-    min-width: 5rem;
+    grid-template-columns: 1fr 3fr;
+    height: calc(1.5rem + 1vw);
     align-items:center;
     overflow:hidden;
-    
+
     background-color: #ffffff;
     box-shadow: 4px 4px 2px #adcfdd ;
     border-radius: .5rem;
-    
-    font-size: calc(.5rem + .4vw);
     font-weight: bold;
 }
 
@@ -173,7 +168,7 @@ footer {
     position: absolute;
     left:0;
     right:0;
-    top:50%;
+    top:40%;
     transform:translateY(-50%);
     margin: 0px auto;
     min-width: 320px;
@@ -181,8 +176,7 @@ footer {
     background-color: rgba(255, 255, 255, 0.9);
     z-index: 100;
     text-align: center;
-    padding:2rem;
-    padding-bottom: .5rem;
+    padding: .5rem 2rem;
     border-radius: 2rem;
     border: black 1px solid;
 
@@ -211,11 +205,6 @@ footer {
     border: 3px solid #336e80;
 }
 
-.score {
-    width: 40vw;
-    padding: 0 1rem 1rem 1rem;
-}
-
 footer {
     position: fixed;
     display:block;
@@ -226,13 +215,11 @@ footer {
 
 dl {
     display: block;
-    width: 90%;
+    width: 100%;
     position: relative;
-    padding-left: 20px;
-    margin: 0px auto;
     background-color: #adcfdd68;
     padding: 10px 20px;
-    font-size: 1.5rem;
+    font-size: calc(.8rem + 1vw);
     border-radius: 20px;
 }
   
@@ -241,49 +228,40 @@ dt {
     width: 100%;
     display: block;
     text-align: center;
-    font-size: 1em;
+    font-size: calc(1.2rem + 1vw);
     font-weight: 500;
-    margin-bottom: 20px;
 }
 
 .graphtext {
     font-weight: 600;
-    align-items: center;
-    height: 40px;
-    width: 3rem;
-    position: absolute;
-    left: 0;
-    justify-content: flex-start;
-    margin-left: 2rem;
+    text-align: left;
+    height: calc(1.2rem + 1vw);
+    grid-area: 1/1/1/1;
+    min-width: 2rem;
 }
 
-.percentage {
+.percentagegrid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    position: relative;
     width: 50%;
-    height: 40px;
-    margin: 4px auto 0px auto;
+    min-width: 200px;
+    height: calc(1.2rem + 1vw);
+    margin: 4px auto 4px auto;
     
 }
 
 #percentage-1, #percentage-2, #percentage-3, #percentage-4, #percentage-5, #percentage-6, #percentage-7 {
-    position: absolute;
-    left: 0;
     content: "";
-    display: inline-block;
     background-color: #336e80;
     color: white;
     font-weight: 700;
-    align-self: center;
-    padding: auto 0px;
     width: 100%;
-    margin-bottom: 10px;
-    height: 90%;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+    height: 100%;
 }   
 
 
-@media only screen and (min-width: 1800px) {
+@media only screen and (min-width: 1200px) {
     #guesses {
         grid-template-rows: 6rem 3rem;
         gap: 1rem .75rem;
@@ -293,12 +271,12 @@ dt {
     }
 
     .guess {
-        height:6rem;
+        height:calc(4rem + 1vw)
     }
 
     .share {
         grid-area: 2/3/3/5;
-        height: 3rem;
+        height: calc(2.3rem + 1vw);
     }
 
     .overlay {

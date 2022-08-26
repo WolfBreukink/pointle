@@ -233,7 +233,7 @@ function calcScore() {
         let percentageBar = document.getElementById(classId);
         let barWidth = 1;
         if (scoreArray.length > 0) {
-            barWidth = Math.max(1, counter*100/scoreArray.length);
+            barWidth = Math.max(0.5, counter*100/scoreArray.length);
         }
         percentageBar.style.width = `${barWidth}%`;
         if (counter > 0) {
