@@ -173,12 +173,12 @@ footer {
     margin: 0px auto;
     min-width: 320px;
     max-width: 80vw;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.95);
     z-index: 100;
     text-align: center;
     padding: .5rem 2rem;
     border-radius: 2rem;
-    border: black 1px solid;
+    border: black 4px solid;
 
     font-size: clamp(1rem, calc(1rem + 1vw), 2rem);
 }
