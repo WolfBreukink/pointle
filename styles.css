@@ -7,16 +7,18 @@ html {
     background-color: #c0e5f5;
     color: #336e80;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
 }
 
 body {
     min-width: 320px;
+    height: 100%;
+}
+#wrap {
+    min-height: 100%;
+    margin-bottom: clamp(-1.2rem, -1.2rem - 2vw, -3.5rem);
 }
 
-footer {
-    display: flex;
-    justify-content: space-around;
-}
 #header {
     display: flex;
     justify-content: space-around;
@@ -74,8 +76,9 @@ footer {
     grid-template-columns: 90vw;
     align-items: center;
     overflow: visible;    
-    height: 100%;
+    height: fit-content;
     min-width: 320px;
+    
 }
 
 .container > * {
@@ -206,11 +209,25 @@ footer {
 }
 
 footer {
-    position: fixed;
-    display:block;
-    font-size: .7rem;
-    bottom:0.2rem;
-    left:0.2rem;
+    position: relative;
+    margin: clamp(-.8rem, -.8rem - 2vw, -2rem) auto 3rem auto;
+    font-size: clamp(.4rem, .4rem + 1vw, 1rem);
+    bottom: 3rem;
+    text-align: center;
+    height: clamp(.8rem, .8rem + 2vw, 2rem);
+}
+
+a:link {
+    color: #000;
+}
+a:hover {
+    color: #fff;
+}
+a:active {
+    color: #000;
+}
+a:visited {
+    color: #234e5c;
 }
 
 dl {

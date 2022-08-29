@@ -13,68 +13,66 @@
 </head>
 
 <body>
-    <header id="header">
-        <img src="./resources/pointle_logo.svg" alt="globe with arrow" onclick="location.reload()">
-        <p class="nav" onclick="show(document.getElementById('helpmenu'))">❓</p>
-        <p class="nav" onclick="calcScore(); show(document.getElementById('scoremenu'))">📈</p>
-        <p class="nav" onclick="show(document.getElementById('settings'))">⚙️</p>
-    </header>
-
-    <div class='overlay' id="gameover" onclick="hide(this)"><p id="gameoverClose"><em style="font-size: 1rem;">Click here to close</em></p></div>
-    <div class='overlay help' id="helpmenu" onclick="hide(this)">
-        <h3>POINTLE</h3>
-        <article style="text-align: center;">
-            The goal of this game is to locate the country or region shown at the top of the page.<br>
-            <h2 class="gameinfo smaller" style="margin-bottom:0">Germany</h2><br>
-            You have 6 attempts to click at the right location on the map, where a dot will appear on each of your guessed locations.<br>
-            The color of the dot shows your proximitry to the right location.<br><br>
-            <div style="text-align: center;"><span style="color: #00ff00">● : close</span>, <span style="color:#ff0000">● : far</span></div><br>
-            When you guessed the correct location, or run out of tries, you will be able to share your score with your friends!
-        </article>
-        <p><em style="font-size: calc(0.5rem + 0.8vw);">Click here to close</em></p>
-    </div>
-    <div class='overlay score' id="scoremenu" onclick="hide(this)">
-        <h3>Stats</h3>
-        <dl>
-            <dt>Guessed the location in #</dt><br>
-            <dd class="percentagegrid"><span class="graphtext">&nbsp 1 : </span><div id="percentage-1"></div></dd>
-            <dd class="percentagegrid"><span class="graphtext">&nbsp 2 : </span><div id="percentage-2"></div></dd>
-            <dd class="percentagegrid"><span class="graphtext">&nbsp 3 : </span><div id="percentage-3"></div></dd>
-            <dd class="percentagegrid"><span class="graphtext">&nbsp 4 : </span><div id="percentage-4"></div></dd>
-            <dd class="percentagegrid"><span class="graphtext">&nbsp 5 : </span><div id="percentage-5"></div></dd>
-            <dd class="percentagegrid"><span class="graphtext">&nbsp 6 : </span><div id="percentage-6"></div></dd>
-            <dd class="percentagegrid"><span class="graphtext">❌: </span><div id="percentage-7"></div></dd>
-        </dl>
-    </div>
-    <div class='overlay settings' id="settings">
-        <h3>Settings</h3>
-        <div class="button" id="clearcache" onclick="localStorage.clear()">Clear user data</div>
-        <div class="button" onclick="hide(this.parentElement)">Close</div>
-    </div>
-    <h2 id="todayscountry" class="gameinfo">-</h2>
-    <div class="container" id="playfield">
-        <div id="background" class="fieldlayer background bordered"></div>
-        <object id='svgobject' data="./resources/BlankMap-World-Compact.svg" class="fieldlayer" onclick="alert('clicked')">Alternative content</object>
-        <canvas id="pointers" width="2560" height="1134" class="fieldlayer"></canvas>
-        <!-- <h2 id="scoreboard" class="gameinfo">0</h2> -->
-        <div id="guesses"> 
-            <div id='guess1' class="guess">&nbsp</div>
-            <div id='guess2' class="guess">&nbsp</div>
-            <div id='guess3' class="guess">&nbsp</div>
-            <div id='guess4' class="guess">&nbsp</div>
-            <div id='guess5' class="guess">&nbsp</div>
-            <div id='guess6' class="guess">&nbsp</div>
-            <div id="share" class="guess share" onclick="copyToClipboard(this)"> 🔗 Share 🔗</div>
+    <div id="wrap">
+        <header id="header">
+            <img src="./resources/pointle_logo.svg" alt="globe with arrow" onclick="location.reload()">
+            <p class="nav" onclick="show(document.getElementById('helpmenu'))">❓</p>
+            <p class="nav" onclick="calcScore(); show(document.getElementById('scoremenu'))">📈</p>
+            <p class="nav" onclick="show(document.getElementById('settings'))">⚙️</p>
+        </header>
+        <div class='overlay' id="gameover" onclick="hide(this)"><p id="gameoverClose"><em style="font-size: 1rem;">Click here to close</em></p></div>
+        <div class='overlay help' id="helpmenu" onclick="hide(this)">
+            <h3>POINTLE</h3>
+            <article style="text-align: center;">
+                The goal of this game is to locate the country or region shown at the top of the page.<br>
+                <h2 class="gameinfo smaller" style="margin-bottom:0">Germany</h2><br>
+                You have 6 attempts to click at the right location on the map, where a dot will appear on each of your guessed locations.<br>
+                The color of the dot shows your proximitry to the right location.<br><br>
+                <div style="text-align: center;"><span style="color: #00ff00">● : close</span>, <span style="color:#ff0000">● : far</span></div><br>
+                When you guessed the correct location, or run out of tries, you will be able to share your score with your friends!
+            </article>
+            <p><em style="font-size: calc(0.5rem + 0.8vw);">Click here to close</em></p>
         </div>
-    </div>
-
-
+        <div class='overlay score' id="scoremenu" onclick="hide(this)">
+            <h3>Stats</h3>
+            <dl>
+                <dt>Guessed the location in #</dt><br>
+                <dd class="percentagegrid"><span class="graphtext">&nbsp 1 : </span><div id="percentage-1"></div></dd>
+                <dd class="percentagegrid"><span class="graphtext">&nbsp 2 : </span><div id="percentage-2"></div></dd>
+                <dd class="percentagegrid"><span class="graphtext">&nbsp 3 : </span><div id="percentage-3"></div></dd>
+                <dd class="percentagegrid"><span class="graphtext">&nbsp 4 : </span><div id="percentage-4"></div></dd>
+                <dd class="percentagegrid"><span class="graphtext">&nbsp 5 : </span><div id="percentage-5"></div></dd>
+                <dd class="percentagegrid"><span class="graphtext">&nbsp 6 : </span><div id="percentage-6"></div></dd>
+                <dd class="percentagegrid"><span class="graphtext">❌: </span><div id="percentage-7"></div></dd>
+            </dl>
+        </div>
+        <div class='overlay settings' id="settings">
+            <h3>Settings</h3>
+            <div class="button" id="clearcache" onclick="localStorage.clear()">Clear user data</div>
+            <div class="button" onclick="hide(this.parentElement)">Close</div>
+        </div>
+        <h2 id="todayscountry" class="gameinfo">-</h2>
+        <div class="container" id="playfield">
+            <div id="background" class="fieldlayer background bordered"></div>
+            <object id='svgobject' data="./resources/BlankMap-World-Compact.svg" class="fieldlayer" onclick="alert('clicked')">Alternative content</object>
+            <canvas id="pointers" width="2560" height="1134" class="fieldlayer"></canvas>
+            <!-- <h2 id="scoreboard" class="gameinfo">0</h2> -->
+            <div id="guesses"> 
+                <div id='guess1' class="guess">&nbsp</div>
+                <div id='guess2' class="guess">&nbsp</div>
+                <div id='guess3' class="guess">&nbsp</div>
+                <div id='guess4' class="guess">&nbsp</div>
+                <div id='guess5' class="guess">&nbsp</div>
+                <div id='guess6' class="guess">&nbsp</div>
+                <div id="share" class="guess share" onclick="copyToClipboard(this)"> 🔗 Share 🔗</div>
+            </div>
+        </div>
+    </div>  
     <footer>
-        <h3>Pointle game - Day <span id="dayCount">-1</span></h3>
-        <h4><em>This website is still in development, expect more and better functionality soon!</em></h4>
+        <h3>POINTLE - Day <span id="dayCount">-1</span><br>
+        🌎 Love my game? <a target="_blank" href="https://ko-fi.com/wolfbreukink">Consider buying me a coffee!</a> 🌍</h3>
     </footer>
 </body>
-
 
 <script src="../Libraries/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="main.js"></script>
